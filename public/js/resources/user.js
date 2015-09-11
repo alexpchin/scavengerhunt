@@ -1,18 +1,19 @@
-angular.module('scavengerHunt')
+angular
+  .module('scavengerHunt')
   .factory('User', User);
 
 User.$inject = ['$resource'];
 
 function User ($resource) {
 
- var url = 'http://localhost:3000/api/users'
+ var url = 'http://localhost:3000/api/auth'
 
  var UserResource = $resource(
     url + ':id',
     {id: '@_id'},
     { 'update': { method: 'PUT' },
-    'authorize': { url: url + '/authorize', method: 'POST' },
-    'join': { url: url + '/join', method: 'POST' }
+    'signin': { url: url + '/signin', method: 'POST' },
+    'signup': { url: url + '/signup', method: 'POST' }
  });
 
  return UserResource;

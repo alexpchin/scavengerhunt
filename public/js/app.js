@@ -1,6 +1,11 @@
 angular
   .module('scavengerHunt', ['ngResource', 'ui.router', 'angular-jwt'])
-  .config(MainRouter)
+  .constant("API", "http://localhost:3000/api")
+  .config(MainRouter, AuthInterceptor)
+
+function AuthInterceptor($httpProvider){
+  $httpProvider.interceptors.push("authInterceptor");
+}
 
 function MainRouter($stateProvider, $urlRouterProvider){
   $stateProvider

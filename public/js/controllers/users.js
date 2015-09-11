@@ -1,13 +1,12 @@
 angular.module('scavengerHunt')
   .controller('UsersController', UsersController);
 
-UsersController.$inject = ['User', 'Auth'];
-function UsersController(User, Auth){
+UsersController.$inject = ['User', 'TokenService'];
+function UsersController(User, TokenService){
   var self = this;
 
-  self.user = User.all
-
-  self.users = User.query();
+  self.all = [];
+  self.users = {};
 
   function handleRequest(res) {
     var token = res.data ? res.data.token : null;
@@ -35,18 +34,18 @@ function UsersController(User, Auth){
     // .then(handleRequest, handleRequest)
   }
   self.register = function() {
-    User.join({email: self.email , password: self.password, full_name: self.full_name },function(response){
+    User.signup({email: self.email , password: self.password, full_name: self.full_name },function(response){
       console.log(response);
     })
     // user.register(self.email, self.password)
     // .then(handleRequest, handleRequest)
   }
   self.logout = function() {
-    auth.logout && auth.logout()
+    TokenService.logout && TokenService.logout()
   }
   self.isAuthed = function() {
-    return auth.isAuthed ? auth.isAuthed() : false
+    return TokenService.isAuthed ? TokenService.isAuthed() : false
   }
-  return self;
 
+  return self
 }

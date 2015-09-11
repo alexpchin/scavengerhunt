@@ -1,4 +1,5 @@
-angular.module('scavengerHunt')
+angular
+  .module('scavengerHunt')
   .factory('Task', Task);
 
 Task.$inject = ['$resource'];

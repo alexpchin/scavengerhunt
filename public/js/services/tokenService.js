@@ -1,8 +1,9 @@
- angular.module('scavengerHunt')
- .service('auth', authService)
+ angular
+  .module('scavengerHunt')
+  .service('TokenService', TokenService)
 
- authService.$inject = ['$window' , 'jwtHelper']
- function authService($window, jwtHelper) {
+ TokenService.$inject = ['$window' , 'jwtHelper']
+ function TokenService($window, jwtHelper) {
 
   var self = this;
 
@@ -26,6 +27,7 @@
 
   self.isAuthed = function() {
     var token = self.getToken();
+    
     if(token) {
       var params = self.parseJwt(token);
       return Math.round(new Date().getTime() / 1000) <= params.exp;
