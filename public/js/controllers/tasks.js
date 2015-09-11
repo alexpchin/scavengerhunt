@@ -15,6 +15,7 @@ function TasksController(Task, Hunt, $stateParams){
   if ($stateParams.id) {
     Hunt.get({ id: $stateParams.hunt_id}, function(hunt){
       self.hunt = hunt;
+      self.task = Task.get({id: $stateParams.id});
       console.log(hunt);
     })
   }
@@ -22,7 +23,7 @@ function TasksController(Task, Hunt, $stateParams){
   // self.tasks = Task.query();
 
   self.getTask = function(task) {
-    self.getTask = Task.get({id: task._id});
+    self.getTask = Task.get({id: $stateParams.id});
   };
 
   self.addTask = function() {
@@ -30,7 +31,7 @@ function TasksController(Task, Hunt, $stateParams){
     console.log(self.task);
     Task.save(self.task, function(task) {
       console.log(task)
-      self.task = {}
+      self.task.task = {}
     })
   };
 
