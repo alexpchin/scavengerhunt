@@ -5,11 +5,14 @@ User.$inject = ['$resource'];
 
 function User ($resource) {
 
- var url = 'http://localhost:3000/api/users/'
+ var url = 'http://localhost:3000/api/users'
 
- var UserResource = $resource(url + ':id',
+ var UserResource = $resource(
+    url + ':id',
     {id: '@_id'},
-    { 'update': { method: 'PUT' }
+    { 'update': { method: 'PUT' },
+    'authorize': { url: url + '/authorize', method: 'POST' },
+    'join': { url: url + '/join', method: 'POST' }
  });
 
  return UserResource;
