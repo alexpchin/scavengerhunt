@@ -1,5 +1,5 @@
 angular.module('scavengerHunt')
-  .controller('HuntsController', HuntsController)
+.controller('HuntsController', HuntsController)
 
 HuntsController.$inject = ['Hunt', '$state']
 function HuntsController (Hunt, $state) {
@@ -24,10 +24,10 @@ function HuntsController (Hunt, $state) {
   }
 
   self.deleteHunt = function (hunt) {
-  Hunt.delete(hunt._id, function (response) {
-    console.log(response)
-  })
-}
+    Hunt.delete(hunt._id, function (response) {
+      console.log(response)
+    })
+  }
 
   self.joinHunt = function(hunt) {
     data = { hunt_id: hunt._id, user_id: '' } 

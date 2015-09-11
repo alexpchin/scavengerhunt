@@ -1,5 +1,7 @@
 <div ng-controller="HuntsController as hunts">
+
 <h1>new-hunt</h1>
+
 <form ng-submit="hunts.createHunt()">
   <label for="name">Name:</label>
   <input type="text" name="name" ng-model="hunts.newHunt.name">
@@ -10,7 +12,7 @@
   <label for="location">Location:</label>
   <input type="text" name="location" ng-model="hunts.newHunt.location">
   <label for="password">Password:</label>
-  <input type="text" name="password" ng-model="hunts.newHunt.password">
+  <input type="password" name="password" ng-model="hunts.newHunt.password">
   <label for="start_time">starts:</label>
   <input type="text" name="start_time" ng-model="hunts.newHunt.start_time">
   <label for="end_time">Ends:</label>
