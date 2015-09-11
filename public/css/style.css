@@ -1,3 +1,23 @@
+<<<<<<< HEAD
+form {
+  margin: 30px; }
+
+header {
+  height: 50px; }
+
+nav {
+  height: 50px; }
+
+ul {
+  overflow: hidden;
+  height: 50px;
+  padding: 0px;
+  margin: 0px; }
+
+li {
+  list-style: none;
+  display: inline-block; }
+=======
 main {
   background: #3D6D91;
   height: 100vh; }
@@ -74,5 +94,6 @@ footer {
   font-size: 15px;
   font-weight: 300;
   color: #FFF; }
+>>>>>>> 1c5f68c1cf34ce07dc2dd8fba64a3b2db9fb28c9
 
 /*# sourceMappingURL=style.css.map */
