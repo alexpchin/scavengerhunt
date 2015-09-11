@@ -5,6 +5,7 @@ var User     = require('./user')
 var HuntSchema = new mongoose.Schema({
   name: String,
   tagline: String,
+  image: String,
   description: String,
   start_time: Date,
   end_time: Date,
