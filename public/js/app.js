@@ -26,7 +26,10 @@ function MainRouter($stateProvider, $urlRouterProvider){
     })
     .state('showTask', {
       url: "/hunts/:hunt_id/tasks/:id",
-      templateUrl: "templates/tasks/show.html"
+      templateUrl: "templates/tasks/show.html",
+      params: {
+        id: null
+      }
     })
   
     .state('showHunt', {

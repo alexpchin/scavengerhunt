@@ -6,7 +6,6 @@ var TaskSchema = new mongoose.Schema({
   description: String,
   points: Number,
   completedTasks: [{type: mongoose.Schema.ObjectId, ref: 'CompletedTask'}]
-
 })
 
 var Task = mongoose.model('Task', TaskSchema);

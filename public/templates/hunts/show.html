@@ -9,7 +9,7 @@ Price: £ {{hunts.hunt.price}}
 </p>
 <ul>
   <li ng-repeat="task in hunts.hunt.tasks">
-    <span>{{task.title}}</span>
+  <a href="#/hunts/{{hunts.hunt._id}}/tasks/{{task._id}}"><span>{{task.title}}</span></a>
   </li>
 </ul>
 <a href="#/hunts/{{hunts.hunt._id}}/tasks/new">Add Task</a>
