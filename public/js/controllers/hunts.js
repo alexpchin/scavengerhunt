@@ -16,12 +16,12 @@ function HuntsController (Hunt, $state, $stateParams) {
     })
   }
 
-
   self.all = Hunt.query();
 
   self.showHunt = function (hunt) {
     $state.go('showHunt', { id: hunt._id });
   }
+
 
   self.addTask = function(hunt){
     $state.go('newTask', { hunt: hunt });
